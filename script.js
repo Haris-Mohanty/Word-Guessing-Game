@@ -102,14 +102,24 @@ let word_hint = document.getElementById("word-hint");
 let refresh_btn = document.getElementById("refresh-btn");
 let check_btn = document.getElementById("check-btn");
 let user_input = document.getElementById("user-input");
+let time = document.getElementById("timer");
 let correct_word;
 let timer;
 
-function timer_func(){
-  
+function timer_func(maxTime){
+  clearInterval(timer);
+  timer = setInterval(function(){
+    if(maxTime > 0)
+    {
+     maxTime--;
+     return time.innerText = maxTime;
+    }
+    clearInterval(timer);
+  },1000)
 }
 
 function game() {
+  timer_func(30);
   let word_obj = words[Math.floor(Math.random() * words.length)];
   let word_array = word_obj.word.split("");
   let i, j;
