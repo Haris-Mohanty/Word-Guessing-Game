@@ -101,6 +101,8 @@ let display_text = document.getElementById("display-text");
 let word_hint = document.getElementById("word-hint");
 let refresh_btn = document.getElementById("refresh-btn");
 let check_btn = document.getElementById("check-btn");
+let user_input = document.getElementById("user-input");
+let correct_word;
 
 function game() {
   let word_obj = words[Math.floor(Math.random() * words.length)];
@@ -109,16 +111,30 @@ function game() {
   for (i = word_array.length - 1; i > 0; i--) {
 
     j = Math.floor(Math.random() * (i + 1));
-    [word_array[i], word_array[j]] = [word_array[j], word_array[i]];
+    [word_array[i], word_array[j]] = [word_array[j], word_array[i]];//
 
   }
   display_text.innerText = word_array.join("");
   word_hint.innerText = word_obj.hint;
+  user_input.setAttribute("maxlength", word_array.length);
+  correct_word = word_obj.word;
 }
 game();
 
 const check_word = () =>{
-  
+  let user_word = user_input.value.toLowerCase();
+  if(user_word != ""){
+    if(user_word == correct_word){
+    swal("Congrats!", "You Entered a Correct Word !", "success");
+      game();
+      user_input.value = "";
+      user_input.reset();
+    }else{
+    swal("Try Again!", "You Entered a Wrong Word !", "error");
+    }
+  }else{
+    swal("Input Field Empty!", "Please Fill The Input Field !", "warning");
+  }
 }
 //REFRESH BUTTON
 refresh_btn.addEventListener('click', () => {
