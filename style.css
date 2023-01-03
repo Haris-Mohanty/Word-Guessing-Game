@@ -1,4 +1,49 @@
-html, body {
-  height: 100%;
-  width: 100%;
+body{
+  padding: 0;
+  margin: 0;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.page{
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+.page h1{
+  text-align: center;
+  font-size: 35px;
+  font-family: sans-serif;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.page h2{
+  text-align: center;
+  font-size: 27px;
+  font-family: sans-serif;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+.page h4{
+  text-align: center;
+  font-family: sans-serif;
+  padding: 10px;
+}
+.page input{
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 17px;
+}
+.page input:focus{
+  outline: none;
+}
+.page button{
+  width: 48%;
+  padding: 10px;
+  font-family: sans-serif;
+  font-weight: bold;
 }
