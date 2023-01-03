@@ -115,6 +115,9 @@ function timer_func(maxTime){
      return time.innerText = maxTime;
     }
     clearInterval(timer);
+    swal("Sorry!", "Your Time is Off !", "error");
+    user_input.value = "";
+    game();
   },1000)
 }
 
