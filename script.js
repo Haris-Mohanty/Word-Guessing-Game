@@ -103,6 +103,11 @@ let refresh_btn = document.getElementById("refresh-btn");
 let check_btn = document.getElementById("check-btn");
 let user_input = document.getElementById("user-input");
 let correct_word;
+let timer;
+
+function timer_func(){
+  
+}
 
 function game() {
   let word_obj = words[Math.floor(Math.random() * words.length)];
